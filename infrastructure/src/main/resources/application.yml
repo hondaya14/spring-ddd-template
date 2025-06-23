@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    group:
+      default: local
+      local:
+        - common-infra
+        - local-infra
+      test-infra:
+        - common-infra
+        - test-infra
+      beta:
+        - common-infra
+        - beta-infra
+      stg:
+        - common-infra
+        - stg-infra
+      rc:
+        - common-infra
+        - rc-infra
+      prd:
+        - common-infra
+        - prd-infra

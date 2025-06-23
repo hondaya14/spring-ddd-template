@@ -1,0 +1,41 @@
+spring:
+  profiles:
+    group:
+      default: local
+      local:
+        - common-infra
+        - local-infra
+        - local-api
+      test:
+        - common-infra
+        - test-infra
+        - local-api
+      beta:
+        - common-infra
+        - beta-infra
+        - beta-api
+      stg:
+        - common-infra
+        - stg-infra
+        - stg-api
+      rc:
+        - common-infra
+        - rc-infra
+        - rc-api
+      prd:
+        - common-infra
+        - prd-infra
+        - prd-api
+  application:
+    name: spring-ddd-template-api
+
+server:
+  port: 8080
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  health:
+    diskspace:
+      enabled: false

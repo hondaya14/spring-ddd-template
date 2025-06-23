@@ -1,0 +1,97 @@
+[versions]
+kotlin="1.9.24"
+java="21"
+springBoot="3.5.1"
+kotest="5.8.1"
+mockk="1.13.13"
+springmockk = "4.0.2"
+detekt="1.23.6"
+openapi="7.5.0"
+swagger-core="2.2.22"
+mybatis-spring = "3.0.3"
+mybatis-generator="1.4.2"
+slf4j="2.0.13"
+kotest-allure = "1.4.0"
+kotest-spring = "1.3.0"
+allure-gradle = "2.12.0"
+kover = "0.8.3"
+micrometer = "1.4.4"
+logback = "0.1.5"
+jackson = "2.18.3"
+apache-http-client = "5.4.3"
+springRetry = "2.0.7"
+
+[libraries]
+# Kotlin
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+jackson-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson"}
+
+# Spring
+spring-retry = { module = "org.springframework.retry:spring-retry", version.ref = "springRetry" }
+
+# Spring Boot
+spring-boot-bom = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "springBoot" }
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web"}
+spring-boot-starter-jdbc = { module = "org.springframework.boot:spring-boot-starter-jdbc"}
+spring-boot-starter-security = { module = "org.springframework.boot:spring-boot-starter-security"}
+spring-boot-starter-acuator = { module = "org.springframework.boot:spring-boot-starter-actuator"}
+spring-boot-starter-aop = { module = "org.springframework.boot:spring-boot-starter-aop"}
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test"}
+spring-boot-starter-validation = { module = "org.springframework.boot:spring-boot-starter-validation"}
+spring-boot-configuration-processor = { module = "org.springframework.boot:spring-boot-configuration-processor", version.ref = "springBoot" }
+spring-tx = { module = "org.springframework:spring-tx"}
+micrometer-tracing-bridge-brave = { module = "io.micrometer:micrometer-tracing-bridge-brave", version.ref = "micrometer"}
+
+# Kotest
+kotest-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+kotest-dataset = { module = "io.kotest:kotest-framework-datatest", version.ref = "kotest" }
+kotest-json = { module = "io.kotest:kotest-assertions-json", version.ref = "kotest" }
+kotest-allure = { module = "io.kotest.extensions:kotest-extensions-allure", version.ref = "kotest-allure" }
+kotest-spring = { module = "io.kotest.extensions:kotest-extensions-spring", version.ref = "kotest-spring" }
+
+# MockK
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+springmockk = { module = "com.ninja-squad:springmockk", version.ref = "springmockk" }
+
+# Slf4j
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+
+# OpenAPI
+swagger-annotations = { module = "io.swagger.core.v3:swagger-annotations", version.ref = "swagger-core"}
+
+# Mybatis
+mybatis-spring-boot-starter = { module = "org.mybatis.spring.boot:mybatis-spring-boot-starter", version.ref = "mybatis-spring"}
+mybatis-generator-core = { module = "org.mybatis.generator:mybatis-generator-core", version.ref = "mybatis-generator" }
+
+# Detekt
+detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
+
+# Logback
+logback-json-classic = { module = "ch.qos.logback.contrib:logback-json-classic" , version.ref = "logback"}
+logback-jackson = { module = "ch.qos.logback.contrib:logback-jackson", version.ref = "logback"}
+
+# HttpClient
+apache-http-client = { module = "org.apache.httpcomponents.client5:httpclient5", version.ref = "apache-http-client"}
+
+[bundles]
+test = [
+  "kotest-junit5",
+  "kotest-dataset",
+  "kotest-json",
+  "kotest-allure",
+  "kotest-spring",
+  "mockk",
+  "springmockk",
+]
+
+
+[plugins]
+spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+openapi-generator = { id = "org.openapi.generator", version.ref = "openapi" }
+allure-aggregate-report = { id = "io.qameta.allure-aggregate-report", version.ref = "allure-gradle" }
+allure-adapter = { id = "io.qameta.allure-adapter", version.ref = "allure-gradle" }
+kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
+protobuf = { id = "com.google.protobuf", version.ref = "protobuf-plugin" }
